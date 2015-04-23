@@ -6,7 +6,7 @@
 </head>
 <body>
 <ul>
-<%Abc=search_text%>
+<h1>Your search images are:</h1>
 <%temp=0%>
   <%if(file_result != nil)%>
   <%file_result.each do|result| %>
@@ -21,7 +21,7 @@
 <%end%>
 </ul>
 <%if(temp==0)%>
-  <p>File not found </p>
+  <p>Images not found </p>
  <% end%>
 </body>
 </html>

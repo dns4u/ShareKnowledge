@@ -31,7 +31,7 @@
       <div class="container">
         <div class="searchmenu">
           <ul>
-            <a href="/all"><li>All </li></a>
+            <a href="#"><li>All </li></a>
             <a href="/video/<%=search_text%>"><li>Videos</li></a>
             <a href="/image/<%=search_text%>"><li>Images</li></a>
             <a href="/pdf/<%=search_text%>"><li>PDFs</li></a>
@@ -40,6 +40,7 @@
         </div>
 <div class="searchresult">
 <ul>
+<h1>Your search results are:</h1>
 <%Abc=search_text%>
 <%temp=0%>
   <%if(file_result != nil)%>

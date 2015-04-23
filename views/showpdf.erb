@@ -6,10 +6,10 @@
 </head>
 <body>
 <ul>
-<%Abc=search_text%>
+<h1>Your search PDFs results are:</h1>
 <%temp=0%>
   <%if(file_result != nil)%>
-  <%file_result.each do|result| %>
+    <%file_result.each do|result| %>
     <%if(result.file_file_name=~/#{Regexp.escape(search_text)}/)%>
     <%if(result.file_content_type=~/application/)%>
       <%filename=result.file_file_name%>
@@ -21,7 +21,7 @@
 <%end%>
 </ul>
 <%if(temp==0)%>
-  <p>File not found </p>
+  <p>PDFs not found </p>
  <% end%>
 </body>
 </html>
