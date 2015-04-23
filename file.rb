@@ -63,10 +63,10 @@ post '/share' do
 end
 
 post '/search' do
-  searchtext="{params[:search]}"
-  searchresult=nil;
-  fileresult = ShareFile.all
-  textresult =ShareText.all
-  erb :searchshow, :locals => { :fileresult => fileresult,:textresult => textresult,
-    :searchtext=>"#{params[:search]}"}
+  search_text="{params[:search]}"
+  search_result=nil;
+  file_result = ShareFile.all
+  text_result =ShareText.all
+  erb :searchshow, :locals => { :file_result => file_result,:text_result => text_result,
+    :search_text=>"#{params[:search]}"}
 end
