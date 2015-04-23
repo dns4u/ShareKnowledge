@@ -89,6 +89,11 @@ get '/pdf/:search_text' do
   erb :showpdf, :locals => { :file_result => file_result,
     :search_text=>"#{params[:search_text]}"}
 end
+get '/audio/:search_text' do
+  file_result = ShareFile.all
+  erb :showaudio, :locals => { :file_result => file_result,
+    :search_text=>"#{params[:search_text]}"}
+end
 
 
 
