@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>
-    
-  </title>
+  <title> </title>
   <link href="style.css" type="text/css" rel="stylesheet" />
-    <script src="javascripts/javascript.js" type="text/javascript"></script>
+  <script src="javascripts/javascript.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="header">
@@ -32,7 +30,7 @@
         <div class="searchmenu">
           <ul>
             <a href="/all"><li>All </li></a>
-            <a href="/video/<%=search_text%>"><li>Videos</li></a>
+            <a href="/video/<%search_text%>"><li>Videos</li></a>
             <a href="/image"><li>Images</li></a>
             <a href="/pdf"><li>PDFs</li></a>
             <a href="/links"><li>Links</li></a>
@@ -45,17 +43,11 @@
   <%if(file_result != nil)%>
   <%file_result.each do|result| %>
     <%if(result.file_file_name=~/#{Regexp.escape(search_text)}/)%>
+    <%if(result.file_content_type=~/video/)%>
       <%filename=result.file_file_name%>
      <li><a href="/files/original/<%=filename%>"><%=result.file_file_name %></a></li>
      <%temp=1%>
      <%end%>
-    <%end%>
-<%end%>
-<%if(text_result!= nil)%>
-<% text_result.each do|resultset| %>
-       <%if(resultset.share_text=~/#{Regexp.escape(search_text)}/)%>
-      <li><%=resultset.share_text %></li>
-     <%temp=1%>
      <%end%>
     <%end%>
 <%end%>

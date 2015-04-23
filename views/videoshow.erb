@@ -32,7 +32,7 @@
         <div class="searchmenu">
           <ul>
             <a href="/all"><li>All </li></a>
-            <a href="/video/<%=search_text%>"><li>Videos</li></a>
+            <a href="/video"><li>Videos</li></a>
             <a href="/image"><li>Images</li></a>
             <a href="/pdf"><li>PDFs</li></a>
             <a href="/links"><li>Links</li></a>
@@ -40,10 +40,9 @@
         </div>
 <div class="searchresult">
 <ul>
-<%Abc=search_text%>
 <%temp=0%>
   <%if(file_result != nil)%>
-  <%file_result.each do|result| %>
+  <% file_result.each do|result| %>
     <%if(result.file_file_name=~/#{Regexp.escape(search_text)}/)%>
       <%filename=result.file_file_name%>
      <li><a href="/files/original/<%=filename%>"><%=result.file_file_name %></a></li>

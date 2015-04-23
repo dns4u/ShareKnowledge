@@ -4,7 +4,6 @@ require 'data_mapper'
 require './model.rb'
 require 'dm-core'
 require 'dm-paperclip'
-
 def make_paperclip_mash(file_hash)
   mash = Mash.new
   if(params[:file]!=nil)
@@ -63,14 +62,27 @@ post '/share' do
 end
 
 post '/search' do
-  search_text="{params[:search]}"
-  search_result=nil;
+  session['video']="{params[:search]}"
   file_result = ShareFile.all
   text_result =ShareText.all
   erb :searchshow, :locals => { :file_result => file_result,:text_result => text_result,
     :search_text=>"#{params[:search]}"}
 end
+
 get'/files/original/:filename' do |filename|
   send_file "./files/#{filename}", :filename => filename, :type => 'Application/octet-stream'
-  'hello word'
+end
+
+get '/video/:search_text' do
+  file_result = ShareFile.all
+  erb :showvideo, :locals => { :file_result => file_result,
+    :search_text=>"#{params[:search_text]}"}
+end
+
+get '/image' do
+  "Hello World"
+end
+
+get '/pdf' do
+  "Hello World"
 end
