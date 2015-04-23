@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Video </title>
+  <title>Image</title>
   <link href="style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
@@ -11,7 +11,7 @@
   <%if(file_result != nil)%>
   <%file_result.each do|result| %>
     <%if(result.file_file_name=~/#{Regexp.escape(search_text)}/)%>
-    <%if(result.file_content_type=~/video/)%>
+    <%if(result.file_content_type=~/image/)%>
       <%filename=result.file_file_name%>
      <li><a href="/files/original/<%=filename%>"><%=result.file_file_name %></a></li>
      <%temp=1%>

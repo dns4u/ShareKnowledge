@@ -79,10 +79,17 @@ get '/video/:search_text' do
     :search_text=>"#{params[:search_text]}"}
 end
 
-get '/image' do
-  "Hello World"
+get '/image/:search_text' do
+  file_result = ShareFile.all
+  erb :showimage, :locals => { :file_result => file_result,
+    :search_text=>"#{params[:search_text]}"}
+end
+get '/pdf/:search_text' do
+  file_result = ShareFile.all
+  erb :showpdf, :locals => { :file_result => file_result,
+    :search_text=>"#{params[:search_text]}"}
 end
 
-get '/pdf' do
-  "Hello World"
-end
+
+
+

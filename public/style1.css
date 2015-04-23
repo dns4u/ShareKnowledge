@@ -1,0 +1,219 @@
+.header
+  {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 100px;
+    width: 1380px;
+    background-color:#6699FF;
+  }
+
+.container
+  {
+    position: fixed;
+    left: 450px;
+    top: 100px;
+    height: 500px;
+    width: 900px;
+  }
+
+.footer
+  {
+    position: fixed;
+    left: 0px;
+    top: 540px;
+    height: 100px;
+    width: 1380px;
+    background-color:#47476C;
+  }
+
+.title
+  {
+    position: fixed;
+    left: 500px;
+    top: 0px;
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+.menubar
+  {
+    position:fixed;
+    left: 850px;
+    top: 5px;
+  }
+
+.menubar ul
+  {
+    list-style: none;
+  }
+
+.menubar ul li
+  {
+    float:left;
+    margin: 2px;
+    display: inline-block;
+    height: 35px;
+    width: 105px;
+    text-align: center;
+    border-radius: 10px;
+    padding-top: 5px;
+    font-size: 22px;
+    color: black;
+  }
+
+.menubar ul li:hover
+  {
+    background-color:#FF6666;
+    color:#E9E9FF
+  }
+
+form,input,select,label
+  {
+    font-size:16px;
+    margin:2.5px;
+  }
+
+label
+  {
+    display: inline-block;
+    width: 150px;
+  }
+
+.button
+  {
+    position: relative;
+    left:160px;
+  }
+
+ul a
+  {
+    text-decoration: none;
+  }
+
+.note
+  {
+    position:relative;
+    left: 170px;
+    top: 0px;
+  }
+
+.registrationform
+  {
+    position: relative;
+    left: 10px;
+    top: 0px;
+  }
+ .loginform
+  {
+    position: relative;
+    left: 0px;
+    top: 40px;
+  }
+
+.loginform input,.loginform label
+  {
+    margin: 10px;
+  }
+.loginform .button
+  {
+    position: relative;
+    left:180px;
+  }
+.website
+  {
+    position:fixed;
+    top: 530px;
+    left: 300px;
+  }
+.location
+  {
+    position:fixed;
+    top: 530px;
+    left: 10px;
+  }
+.contact
+  {
+    position:fixed;
+    top: 530px;
+    left: 600px;
+  }
+.copyright
+  {
+    position:fixed;
+    top: 600px;
+    left: 550px;
+  }
+.social
+  {
+    position:fixed;
+    top: 550px;
+    left: 900px;
+  }
+.social img
+  {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+  }
+.search
+  {
+    position: relative;
+    left: 1000px;
+    top: 65px;
+  } 
+
+.textarea 
+  {
+    position: relative;
+    left:-250px;
+    top: 0px;
+    text-align: center;
+  }
+
+ .shareform input,.shareform label .shareform textarea
+  {
+    margin: 10px;
+  }
+.shareform .button
+  {
+    position: relative;
+    left:175px;
+  }
+.container .searchmenu
+  {
+    position: relative;
+    left: 500px;
+  }
+.container .searchmenu ul
+  {
+    list-style: none;
+  }
+.container .searchmenu ul li
+  {
+    float: left;
+    margin: 10px;
+  }
+.container .searchmenu ul li:hover
+  {
+    color: black;
+  }
+.container .searchmenu ul a
+  {
+    text-decoration: none;
+  }
+.container .search
+  {
+    position: fixed;
+    top: 150px;
+    left: 1000px;
+  }
+.container .searchresult
+  {
+    position: fixed;
+    left: 10px;
+  }
+.container .searchresult ul
+  {
+   list-style: none;
+  }
