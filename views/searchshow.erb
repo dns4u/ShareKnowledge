@@ -43,8 +43,9 @@
 <%temp=0%>
   <%if(file_result != nil)%>
   <% file_result.each do|result| %>
-       <%if(result.file_file_name=~/#{Regexp.escape(search_text)}/)%>
-     <li><a href=<%=result.file_file_name%>><%=result.file_file_name %></a></li>
+    <%if(result.file_file_name=~/#{Regexp.escape(search_text)}/)%>
+      <%filename=result.file_file_name%>
+     <li><a href="/files/original/<%=filename%>"><%=result.file_file_name %></a></li>
      <%temp=1%>
      <%end%>
     <%end%>
@@ -52,6 +53,7 @@
 <%if(text_result!= nil)%>
 <% text_result.each do|resultset| %>
        <%if(resultset.share_text=~/#{Regexp.escape(search_text)}/)%>
+
      <li><%=resultset.share_text %></li>
      <%temp=1%>
      <%end%>

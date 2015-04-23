@@ -70,3 +70,7 @@ post '/search' do
   erb :searchshow, :locals => { :file_result => file_result,:text_result => text_result,
     :search_text=>"#{params[:search]}"}
 end
+get'/files/original/:filename' do |filename|
+  send_file "./files/#{filename}", :filename => filename, :type => 'Application/octet-stream'
+  'hello word'
+end
