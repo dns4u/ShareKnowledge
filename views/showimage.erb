@@ -2,9 +2,40 @@
 <html>
 <head>
   <title>Image</title>
-  <link href="style.css" type="text/css" rel="stylesheet" />
+  <link href="/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
+<div class="header">
+      <div class="logo">
+      </div>
+      <p class="title"> ShareKnowledge </p>
+      <div class="menubar">
+       <ul>
+          <a href="/search"><li>Search </li></a>
+          <a href="/share"><li>Share</li></a>
+           <a href="/myfile"><li>My File</li></a>
+          <a href="/logout"><li>Logout</li></a>
+        </ul>
+      </div>
+
+      <div class="search">
+          <form name="searchform" method="post" action="" onsubmit="return require()">
+          <input type="text" name="search" id="file_search">
+          <input type="submit" name="btmsearch" value="Search">
+          </form>
+        </div>
+        </div>
+<div class="container">
+<div class="searchmenu">
+          <ul>
+            <a href="#"><li>All </li></a>
+            <a href="/video/<%=search_text%>"><li>Videos</li></a>
+            <a href="/image/<%=search_text%>"><li>Images</li></a>
+            <a href="/pdf/<%=search_text%>"><li>PDFs</li></a>
+            <a href="/audio/<%=search_text%>"><li>Audio</li></a>
+          </ul>
+        </div>
+<div class="searchresult">
 <ul>
 <h1>Your search images are:</h1>
 <%temp=0%>
@@ -23,5 +54,7 @@
 <%if(temp==0)%>
   <p>Images not found </p>
  <% end%>
+ </div>
+ </div>
 </body>
 </html>
