@@ -27,10 +27,15 @@ get '/logout' do
 end
 
 post '/register' do
-  employee_register = Employee.new
-  employee_register.attributes = params
-  employee_register.save
-  erb:success
+  email=Employee.first(:email=>"#{params[:email]}")
+  if(email==nil)
+    employee_register = Employee.new
+    employee_register.attributes = params
+    employee_register.save
+    erb:success
+  else 
+    erb:fail
+  end
 end
 
 post '/login' do
