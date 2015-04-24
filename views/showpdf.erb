@@ -29,7 +29,7 @@
 <div class="container">
 <div class="searchmenu">
           <ul>
-            <a href="#"><li>All </li></a>
+            <a href="/all/<%=search_text%>"><li>All </li></a>
             <a href="/video/<%=search_text%>"><li>Videos</li></a>
             <a href="/image/<%=search_text%>"><li>Images</li></a>
             <a href="/pdf/<%=search_text%>"><li>PDFs</li></a>
@@ -45,7 +45,9 @@
     <%if(result.file_file_name=~/#{Regexp.escape(search_text)}/)%>
     <%if(result.file_content_type=~/application/)%>
       <%filename=result.file_file_name%>
-     <li><a href="/files/original/<%=filename%>"><%=result.file_file_name %></a></li>
+      <div class="eachresult">
+        <li><b><%=filename%></b></li>
+        <li><a href="/files/original/<%=filename%>"><%=result.file_file_name %></a></li>
      <%temp=1%>
      <%end%>
      <%end%>

@@ -32,7 +32,7 @@
       <div class="container">
         <div class="searchmenu">
           <ul>
-            <a href="#"><li>All </li></a>
+            <a href="/video/<%=search_text%>"><li>All </li></a>
             <a href="/video/<%=search_text%>"><li>Videos</li></a>
             <a href="/image/<%=search_text%>"><li>Images</li></a>
             <a href="/pdf/<%=search_text%>"><li>PDFs</li></a>
@@ -48,19 +48,24 @@
   <%file_result.each do|result| %>
     <%if(result.file_file_name=~/#{Regexp.escape(search_text)}/)%>
       <%filename=result.file_file_name%>
-     <li><a href="/files/original/<%=filename%>"><%=result.file_file_name %></a></li>
+      <div class="eachresult">
+      <li><b><%=filename%></b></li>
+      <li><a href="/files/original/<%=filename%>"><%=result.file_file_name %></a></li>
+      </div>
      <%temp=1%>
      <%end%>
     <%end%>
 <%end%>
 <%if(text_result!= nil)%>
 <% text_result.each do|resultset| %>
+<div class="eachresult">
        <%if(resultset.share_text=~/#{Regexp.escape(search_text)}/)%>
       <li><%=resultset.share_text %></li>
      <%temp=1%>
      <%end%>
     <%end%>
 <%end%>
+</div>
 </ul>
 <%if(temp==0)%>
   <p>File not found </p>
@@ -82,13 +87,13 @@
       </div>
       <div class="social">
         <a href="https://www.facebook.com/pages/Jyaasa/879593435386987" target="_blank">
-          <img src="facebook.jpg">
+          <img src="/facebook.jpg">
         </a>
         <a href="https://twitter.com/jyaasa" target="_blank">
-          <img src="twitter.jpeg">
+          <img src="/twitter.jpeg">
         </a>
         <a href="https://plus.google.com/105348084839677139527" target="_blank">
-          <img src="google.jpg">
+          <img src="/google.jpg">
         </a>
       </div>
       <div class="copyright">

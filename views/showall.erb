@@ -44,14 +44,12 @@
           <%if(file_result != nil)%>
             <%file_result.each do|result| %>
               <%if(result.file_file_name=~/#{Regexp.escape(search_text)}/)%>
-                <%if(result.file_content_type=~/video/)%>
-                  <%filename=result.file_file_name%>
-                  <div class="eachresult">
-                    <li><b><%=filename%></b></li>
-                    <li><a href="/files/original/<%=filename%>"><%=result.file_file_name %></a></li>
-                  </div>
-                  <%temp=1%>
-                <%end%>
+                <%filename=result.file_file_name%>
+                <div class="eachresult">
+                  <li><b><%=filename%></b></li>
+                  <li><a href="/files/original/<%=filename%>"><%=result.file_file_name %></a></li>
+                </div>
+                <%temp=1%>
               <%end%>
             <%end%>
           <%end%>

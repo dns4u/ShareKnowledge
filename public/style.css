@@ -11,10 +11,12 @@
 .container
   {
     position: fixed;
-    left: 450px;
+    left: 2px;
     top: 100px;
-    height: 500px;
-    width: 900px;
+    height: 455px;
+    width: 1365px;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
 .footer
@@ -107,7 +109,7 @@ ul a
  .loginform
   {
     position: relative;
-    left: 0px;
+    left: 400px;
     top: 40px;
   }
 
@@ -183,7 +185,7 @@ ul a
 .container .searchmenu
   {
     position: relative;
-    left: 500px;
+    left: 900px;
   }
 .container .searchmenu ul
   {
@@ -217,3 +219,7 @@ ul a
   {
    list-style: none;
   }
+  .container .searchresult ul .eachresult
+  {
+  margin-top: 20px;
+     }

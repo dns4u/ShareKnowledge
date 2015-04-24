@@ -70,7 +70,8 @@ post '/search' do
 end
 
 get'/files/original/:filename' do |filename|
-  send_file "./files/#{filename}", :filename => filename, :type => 'Application/octet-stream'
+  #send_file "./files/#{filename}", :filename => filename, :type => 'Application/octet-stream'
+  erb :showfile, :locals => {:filename => filename, :type => 'Application/octet-stream'}
 end
 
 get '/video/:search_text' do
@@ -92,6 +93,11 @@ end
 get '/audio/:search_text' do
   file_result = ShareFile.all
   erb :showaudio, :locals => { :file_result => file_result,
+    :search_text=>"#{params[:search_text]}"}
+end
+get '/all/:search_text' do
+  file_result = ShareFile.all
+  erb :showall, :locals => { :file_result => file_result,
     :search_text=>"#{params[:search_text]}"}
 end
 
