@@ -19,9 +19,11 @@
         </ul>
       </div>
     </div>
+
     <div class="container">
       <%send_file "./files/#{filename}", :filename => filename, :type => 'Application/octet-stream'%>
     </div>
+    
     <div class="footer">
       <div class="location">
         <p>Location</p>

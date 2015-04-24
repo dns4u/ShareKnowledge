@@ -26,8 +26,8 @@
           </form>
         </div>
         </div>
-<div class="container">
-<div class="searchmenu">
+    <div class="container">
+      <div class="searchmenu">
           <ul>
             <a href="/all/<%=search_text%>"><li>All </li></a>
             <a href="/video/<%=search_text%>"><li>Videos</li></a>
@@ -36,31 +36,31 @@
             <a href="/audio/<%=search_text%>"><li>Audio</li></a>
           </ul>
         </div>
-<div class="searchresult">
-<ul>
-<h1>Your search PDFs results are:</h1>
-<%temp=0%>
-  <%if(file_result != nil)%>
-    <%file_result.each do|result| %>
-    <%if(result.file_file_name=~/#{Regexp.escape(search_text)}/)%>
-    <%if(result.file_content_type=~/application/)%>
-      <%filename=result.file_file_name%>
-      <div class="eachresult">
-        <li><b><%=filename%></b></li>
-        <li><a href="/files/original/<%=filename%>"><%=result.file_file_name %></a></li>
-     <%temp=1%>
-     <%end%>
-     <%end%>
-    <%end%>
-<%end%>
-</ul>
-<%if(temp==0)%>
-  <p>PDFs not found </p>
- <% end%>
- </div>
- </div>
+      <div class="searchresult">
+        <ul>
+        <h1>Your search PDFs results are:</h1>
+        <%temp=0%>
+        <%if(file_result != nil)%>
+          <%file_result.each do|result| %>
+            <%if(result.file_file_name=~/#{Regexp.escape(search_text)}/)%>
+              <%if(result.file_content_type=~/application/)%>
+                <%filename=result.file_file_name%>
+                  <div class="eachresult">
+                    <li><b><%=filename%></b></li>
+                    <li><a href="/files/original/<%=filename%>"><%=result.file_file_name %></a></li>
+                    <%temp=1%>
+              <%end%>
+            <%end%>
+          <%end%>
+        <%end%>
+      </ul>
+      <%if(temp==0)%>
+      <p>PDFs not found </p>
+      <% end%>
+      </div>
+    </div>
 
- <div class="footer">
+    <div class="footer">
       <div class="location">
         <p>Location</p>
         <p>Kathmandu, Nepal</p>
