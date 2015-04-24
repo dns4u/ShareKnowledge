@@ -44,7 +44,9 @@
     left: 850px;
     top: 5px;
   }
-
+.active {
+  background-color:#2980b9;
+  }
 .menubar ul
   {
     list-style: none;
@@ -63,6 +65,14 @@
     font-size: 22px;
     color: black;
   }
+.menubar ul li.login , .menubar ul li.register
+{
+background-color: white;
+}
+.menubar ul li.search_menu , .menubar ul li.share_menu , .menubar ul li.myfile_menu
+{
+background-color: white;
+}
 
 .menubar ul li:hover
   {
@@ -227,4 +237,6 @@ ul a
   .container .searchresult ul .eachresult
   {
   margin-top: 20px;
-     }
+  }
+
+

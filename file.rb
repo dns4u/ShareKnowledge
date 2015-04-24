@@ -37,7 +37,7 @@ get '/myfile' do
   if(session['status']!=1)
     redirect("/login")
   else
-    my_file=EmployeeResource.all(:employee_id=>session['id'])
+    my_file=EmployeeShareFile.all(:employee_id=>session['id'])
     file=ShareFile.all
     erb :myfile, :locals=> {
       :file=> file,
@@ -54,7 +54,7 @@ post '/share' do
       f.write(params['file'][:tempfile].read)
       resource = ShareFile.new(:file => make_paperclip_mash(params[:file]),:tags =>(params[:tags]))
       halt 409, "There were some errors processing your request...\n#{resource.errors.inspect}" unless resource.save
-      employee_resource= EmployeeResource.new(:share_file_id=>(resource.id),:employee_id=>(register.id))
+      employee_resource= EmployeeShareFile.new(:share_file_id=>(resource.id),:employee_id=>(register.id))
       employee_resource.save
     end
   else

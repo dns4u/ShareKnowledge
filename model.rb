@@ -17,8 +17,8 @@ class Employee
   property :email, String
   property :password, String
   property :position, String
-  has n, :employee_resource
-  has n, :share_file, :through => :employee_resource
+  has n, :employee_share_file
+  has n, :share_file, :through => :employee_share_file
   has n, :employee_share_text
   has n, :share_text, :through => :employee_share_text
 end
@@ -41,11 +41,11 @@ class ShareFile
   has_attached_file :file,
                         :url => "/:attachment/:style/:basename.:extension",
                         :path => "#{APP_ROOT}/public/:attachment/:style/:basename.:extension"
-  has n, :employee_resource
+  has n, :employee_share_file
   has n, :employee, :through => :employee_resource
 end
 
-class EmployeeResource
+class EmployeeShareFile
   include DataMapper::Resource
   include Paperclip::Resource
   property :id, Serial
