@@ -96,14 +96,14 @@ ul a
 .note
   {
     position:relative;
-    left: 170px;
+    left: 570px;
     top: 0px;
   }
 
 .registrationform
   {
     position: relative;
-    left: 10px;
+    left: 400px;
     top: 0px;
   }
  .loginform
@@ -168,9 +168,14 @@ ul a
 .textarea 
   {
     position: relative;
-    left:-250px;
+    left:-450px;
     top: 0px;
     text-align: center;
+  }
+  .shareform
+  {
+    position: relative;
+    left: 450px;
   }
 
  .shareform input,.shareform label .shareform textarea

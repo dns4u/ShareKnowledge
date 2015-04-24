@@ -37,9 +37,15 @@ get '/myfile' do
   if(session['status']!=1)
     redirect("/login")
   else
-    erb:myfile
+    my_file=EmployeeResource.all(:employee_id=>session['id'])
+    file=ShareFile.all
+    erb :myfile, :locals=> {
+      :file=> file,
+      :my_file=> my_file
+      }
   end
 end
+ 
 
 post '/share' do
   register=Employee.first(:id=>session['id'])
@@ -100,7 +106,3 @@ get '/all/:search_text' do
   erb :showall, :locals => { :file_result => file_result,
     :search_text=>"#{params[:search_text]}"}
 end
-
-
-
-

@@ -2,7 +2,7 @@
 
   <head>
     <title>My File </title>
-    <link href="style.css" type="text/css" rel="stylesheet" />
+    <link href="/style.css" type="text/css" rel="stylesheet" />
   </head>
 
   <body>
@@ -35,6 +35,28 @@
           <a href="/links"><li>Links</li></a>
         </ul>
       </div>
+      <div class="searchresult">
+<ul>
+      <%temp=0%>
+  <%if(file != nil)%>
+    <%file.each do|file_result| %>
+      <%my_file.each do|my_file_result|%>
+        <% if(file_result.id==my_file_result.share_file_id)%>
+          <%filename=file_result.file_file_name%>
+          <div class="eachresult">
+          <li><b><%=filename%></b></li>
+          <li><a href="/files/original/<%=filename%>"><%=file_result.file_file_name %></a></li>
+          </div>
+          <%temp=1%>
+        <%end%>
+      <%end%>
+    <%end%>
+<%end%>
+</ul>
+<%if(temp==0)%>
+  <p>File not found </p>
+ <% end%>
+</div>
     </div>
 
     <div class="footer">
